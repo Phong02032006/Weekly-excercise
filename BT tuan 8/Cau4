@@ -1,0 +1,24 @@
+
+Thuật toán tìm kiếm nhị phân bằng đệ quy
+Nếu mảng rỗng, trả về -1 (không tìm thấy).
+Tìm phần tử giữa mảng.
+Nếu phần tử giữa là phần tử cần tìm, trả về vị trí.
+Nếu phần tử cần tìm nhỏ hơn phần tử giữa, tìm tiếp ở nửa bên trái.
+Nếu phần tử cần tìm lớn hơn phần tử giữa, tìm tiếp ở nửa bên phải.
+
+Hàm tìm kiếm nhị phân
+int binary_search(int arr[],int left, int right, int key)
+{
+    if(left>right) return -1;
+    int mid = (left+right)/2;
+    if(arr[mid]=key){
+    return mid}
+    else if( arr[mid]>key)
+    {
+     return binary_search(arr,left,mid-1,key)
+    }
+    else
+    {
+        return binary_search(arr,mid+1,right,key)
+    }
+}
